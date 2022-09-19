@@ -388,3 +388,10 @@ Resources:
 # kubectl patch configmap/aws-auth -n kube-system --patch "$(cat /tmp/aws-auth-patch.yml)"
 # Windows
 # kubectl patch configmap/aws-auth -n kube-system --patch "$(cat aws-auth-patch.yml)"
+
+# Download a fresh copy of the configmap
+# You can choose a different path or current working directory to save the  auth-patch.yml
+# kubectl get -n kube-system configmap/aws-auth -o yaml > /tmp/aws-auth-patch.yml
+# Open the configmap in an editor, and update the **data --> mapRoles** section as described earlier while creating the cluster
+# Update the configmap
+# kubectl patch configmap/aws-auth -n kube-system --patch "$(cat /tmp/aws-auth-patch.yml)"
